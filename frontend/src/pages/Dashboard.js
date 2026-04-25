@@ -14,7 +14,7 @@ function Dashboard() {
 
     async function fetchTickets() {
         try {
-            const response = await fetch('https://ticket-app-backend.onrender.com/api/tickets')
+            const response = await fetch('https://ticket-app-backend-th4r.onrender.com/api/tickets')
             const data = await response.json()
             setTickets(data)
             setLoading(false)
@@ -29,7 +29,7 @@ function Dashboard() {
         if (!window.confirm("Are you sure you want to delete this ticket?")) return
 
         try {
-            await fetch(`https://ticket-app-backend.onrender.com/api/tickets/${id}`, {
+            await fetch(`https://ticket-app-backend-th4r.onrender.com/api/tickets/${id}`, {
                 method: 'DELETE'
             })
             // Remove from state without refetching
@@ -42,7 +42,7 @@ function Dashboard() {
     // Update ticket status
     async function handleStatusChange(id, newStatus) {
         try {
-            const response = await fetch(`https://ticket-app-backend.onrender.com/api/tickets/${id}`, {
+            const response = await fetch(`https://ticket-app-backend-th4r.onrender.com/api/tickets/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus })
