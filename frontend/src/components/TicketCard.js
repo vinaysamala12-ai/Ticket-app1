@@ -1,4 +1,4 @@
-﻿function TicketCard({ ticket, onDelete, onStatusChange }) {
+function TicketCard({ ticket, onDelete, onStatusChange }) {
 
     // Color coding based on priority
     const priorityColors = {
